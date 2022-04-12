@@ -1,19 +1,14 @@
 class UserModel {
   String? uid;
   String? email;
-  String? firstName;
-  String? lastName;
+  String? userName;
 
-  UserModel({this.uid, this.email, this.firstName, this.lastName});
+  UserModel({this.uid, this.email, this.userName});
 
   // receiving data from server
   factory UserModel.fromMap(map) {
     return UserModel(
-      uid: map['uid'],
-      email: map['email'],
-      firstName: map['firstName'],
-      lastName: map['lastName'],
-    );
+        uid: map['uid'], email: map['email'], userName: map['userName']);
   }
 
   // sending data to our server
@@ -21,8 +16,7 @@ class UserModel {
     return {
       'uid': uid,
       'email': email,
-      'firstName': firstName,
-      'lastName': lastName,
+      'userName': userName,
     };
   }
 }

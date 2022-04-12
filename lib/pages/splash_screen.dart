@@ -1,5 +1,5 @@
 import 'dart:async';
-//import 'dart:js';
+//import 'dart:js'
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
 
     //set duration for splash screen which will be shown before the Login page
-    new Timer(const Duration(milliseconds: 5000),(){
+    new Timer(const Duration(milliseconds: 3000),(){
       setState(() {
 
         Navigator.of(context).pushAndRemoveUntil(
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // showing fade effect and navigating to Login page
     new Timer(
-        Duration(milliseconds: 10),(){
+        Duration(milliseconds: 5),(){
       setState(() {
         _isVisible = true;
       });
@@ -55,12 +55,13 @@ class _SplashScreenState extends State<SplashScreen> {
    return Container(
 
 
+     // ignore: unnecessary_new
      decoration: new BoxDecoration(
        gradient: new LinearGradient(
-         colors: [Theme.of(context).accentColor, Theme.of(context).primaryColor],
+         colors: [Theme.of(context).colorScheme.secondary, Theme.of(context).primaryColor],
          begin: const FractionalOffset(0, 0),
          end: const FractionalOffset(1.0, 0.0),
-         stops: [0.0, 1.0],
+         stops: const [0.0, 1.0],
          tileMode: TileMode.clamp,
        ),
      ),
